@@ -1,0 +1,14 @@
+#!/bin/bash
+
+pkill -9 node
+pkill -9 print-server
+pkill -9 hacker
+ipcrm -a
+
+target/hacker > /dev/null &
+target/brae-node 1 5 > /dev/null &
+target/brae-node 2 5 > /dev/null &
+target/brae-node 3 5 > /dev/null &
+target/brae-node 4 5 > /dev/null &
+target/brae-node 5 5 > /dev/null &
+target/print-server
